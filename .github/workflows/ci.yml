@@ -25,4 +25,6 @@ jobs:
         run: python --version
       
       - name: Run tests
+        env:
+          DB_NAME: learning_test_db
         run: python -m pytest tests/test_health.py

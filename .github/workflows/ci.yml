@@ -43,6 +43,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       
+      - name: Check python version
+        run: python --version
+      
       - name: Check database connection
         run: |
           python -c "
@@ -53,8 +56,8 @@ jobs:
           print('Database connection successful')
           "
       
-      - name: Check python version
-        run: python --version
+      - name: Initialize test database
+        run: python db/init_db.py
       
       - name: Run tests
-        run: python -m pytest tests/test_health.py
+        run: python -m pytest tests/

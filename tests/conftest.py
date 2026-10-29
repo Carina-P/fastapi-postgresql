@@ -1,8 +1,9 @@
 import os
 import pytest
 from fastapi.testclient import TestClient
-from app.database import execute_returning_one
+import uuid
 
+from app.database import execute_returning_one
 from  app.main import app
 
 client = TestClient(app)
@@ -60,7 +61,7 @@ def customer_with_orders():
     orders = []
     customer_data = {
         "name": "Test Testsson",
-        "email": f"testsson-{uuid4().hex}@example.com",
+        "email": f"testsson-{uuid.uuid4().hex}@example.com",
         "country": "Finland"
     }
 

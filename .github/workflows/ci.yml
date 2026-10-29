@@ -49,7 +49,7 @@ jobs:
           from app.database import execute_returning_one
         
           result = execute_returning_one('SELECT 1 AS value;', [])
-          assert result["value"] == 1
+          assert result['value'] == 1
           print('Database connection successful')
           "
       

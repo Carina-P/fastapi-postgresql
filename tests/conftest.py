@@ -60,7 +60,7 @@ def customer_with_orders():
     orders = []
     customer_data = {
         "name": "Test Testsson",
-        "email": "testsson-{uuid4().hex}@example.com",
+        "email": f"testsson-{uuid4().hex}@example.com",
         "country": "Finland"
     }
 

@@ -80,7 +80,7 @@ jobs:
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v4
-      
+
       # - name: Build Docker image
       #   run: docker build -t fastapi-postgresql:latest .
 
@@ -104,7 +104,9 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/carina-p/fastapi-postgresql:latest
+          tags: |
+            ghcr.io/carina-p/fastapi-postgresql:latest
+            ghcr.io/carina-p/fastapi-postgresql:${{ github.sha }}
     
       - name: Build Docker image for PR
         if: github.event_name == 'pull_request'

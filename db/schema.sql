@@ -29,22 +29,22 @@ CREATE TABLE orders (
         CHECK (status IN ('pending', 'shipped', 'completed', 'cancelled'))
 );
 
--- CREATE TABLE order_items (
---     order_id BIGINT NOT NULL,
---     product_id INTEGER NOT NULL,
---     quantity INTEGER NOT NULL,
---     unit_price NUMERIC(10,2) NOT NULL,
+CREATE TABLE order_items (
+    order_id BIGINT NOT NULL,
+    product_id INTEGER NOT NULL,
+    quantity INTEGER NOT NULL,
+    unit_price NUMERIC(10,2) NOT NULL,
 
---     PRIMARY KEY (order_id, product_id),
+    PRIMARY KEY (order_id, product_id),
 
---     FOREIGN KEY (order_id)
---         REFERENCES orders(id)
---         ON DELETE CASCADE,
+    FOREIGN KEY (order_id)
+        REFERENCES orders(id)
+        ON DELETE CASCADE,
 
---     FOREIGN KEY (product_id)
---         REFERENCES products(id)
---         ON DELETE RESTRICT,
+    FOREIGN KEY (product_id)
+        REFERENCES products(id)
+        ON DELETE RESTRICT,
 
---     CONSTRAINT chk_quantity CHECK (quantity > 0),
---     CONSTRAINT chk_unit_price CHECK (unit_price >= 0)
--- );
+    CONSTRAINT chk_quantity CHECK (quantity > 0),
+    CONSTRAINT chk_unit_price CHECK (unit_price >= 0)
+);

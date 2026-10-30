@@ -7,7 +7,6 @@ from app.database import execute_returning_one
 def test_get_customer_orders_customer_not_found():
     response = client.get("/customers/999999/orders")
 
-    assert 1 == 2
     assert response.status_code == 404
     assert response.json() == {"detail": "Customer 999999 not found"}
 

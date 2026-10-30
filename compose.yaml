@@ -1,6 +1,6 @@
 services:
   app:
-    build: .
+    image: ghcr.io/carina-p/fastapi-postgresql:latest
     environment:
       DB_USER: postgres
       DB_PASSWORD: learning

@@ -29,3 +29,14 @@ env/
 # Local database files
 *.db
 *.sqlite3
+
+# Terraform
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+crash.log
+crash.*.log
+*.tfplan
+*.tfplan.*

@@ -37,7 +37,7 @@ def test_create_product(product_cleanup):
 
     assert response_json["name"] == "Test Product"
     assert response_json["price"] == pytest.approx(149.90) 
-    assert response_json["category"] == "Testing"
+    assert response_json["category"] == "Test"
     assert response_json["active"] is True
     assert response_json["id"] > 0
 

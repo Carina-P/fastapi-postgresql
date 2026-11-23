@@ -12,7 +12,7 @@ provider "aws" {
   profile = "terraform-learning"
 }
 
-resource "aws_ecr_repositor" "my_app" {
+resource "aws_ecr_repository" "my_app" {
   name                 = "terraform-learning"
   image_tag_mutability = "IMMUTABLE"
 }

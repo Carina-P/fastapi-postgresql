@@ -5,10 +5,10 @@ from app.database import execute_returning_one
 
 
 def test_get_customer_orders_customer_not_found():
-    response = client.get("/customers/999999/orders")
+    response = client.get("/customers/999998/orders")
 
     assert response.status_code == 404
-    assert response.json() == {"detail": "Customer 999999 not found"}
+    assert response.json() == {"detail": "Customer 999998 not found"}
 
 
 def test_get_orders_with_customer_id_1():
